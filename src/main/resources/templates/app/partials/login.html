@@ -1,0 +1,30 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="submitLoginForm()" role="form">
+        <div class="form-group">
+           <label for="lastName" class="col-sm-3 control-label">Nutzername</label>
+            <div class="col-sm-4  ">
+                <input type="text" id="firstName" class="form-control" ng-model="student.userName" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Passwort</label>
+            <div class="col-sm-4">
+                <input type="password" id="lastName" class="form-control" ng-model="student.password" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <input type="submit" value="Anmeldung" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/forgotPassword">Forgot Password?</a>
+        <br/>
+        <br/> 
+        <a href="#/register">First Time User?</a>         
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+
