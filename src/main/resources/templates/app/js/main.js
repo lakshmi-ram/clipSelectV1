@@ -1,7 +1,3 @@
-/**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
 
 /**
  * Main AngularJS Web Application
@@ -42,7 +38,7 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function($scope, $location, $http) {
+app.controller('PageCtrl', function($scope, $location, $http,$state) {
 	console.log("Page Controller reporting for duty.");
 
 	$scope.submitLoginForm = function() {
@@ -58,8 +54,10 @@ app.controller('PageCtrl', function($scope, $location, $http) {
 			headers : {
 				'Content-Type' : 'application/json'
 			}
-		}).success(function(data) {
-			alert("Logged in");
+		}).success(function(response) {
+			console.log(response)
+			//CHange this as per response
+			$state.go("response.data.location")
 		});
 	}
 	
