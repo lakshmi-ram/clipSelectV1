@@ -18,6 +18,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/faq", {templateUrl: "templates/app/partials/faq.html", controller: "PageCtrl"})
     .when("/register", {templateUrl: "/templates/app/partials/register.html", controller: "PageCtrl"})
     .when("/forgotPassword", {templateUrl: "templates/app/partials/forgotPassword.html", controller: "PageCtrl"})
+    .when("/active", {templateUrl: "templates/app/partials/active.html", controller: "PageCtrl"})
+    .when("/inactive", {templateUrl: "templates/app/partials/inactive.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "templates/app/partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "templates/app/partials/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "templates/app/partials/contact.html", controller: "PageCtrl"})
@@ -38,7 +40,7 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function($scope, $location, $http,$state) {
+app.controller('PageCtrl', function($scope, $location, $http, $location) {
 	console.log("Page Controller reporting for duty.");
 
 	$scope.submitLoginForm = function() {
@@ -57,7 +59,7 @@ app.controller('PageCtrl', function($scope, $location, $http,$state) {
 		}).success(function(response) {
 			console.log(response)
 			//CHange this as per response
-			$state.go("response.data.location")
+			$location.url("/"+response);
 		});
 	}
 	
