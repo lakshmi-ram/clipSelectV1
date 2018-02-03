@@ -11,6 +11,7 @@ public class User {
 	String password; //Kennwort
 	String active;
 	String activationCode;
+	String title; //herrFrau
 	
 	String surName; //nachname
 	String firstName; //Vorname

@@ -23,4 +23,14 @@ public class CPSServiceImpl implements CPSService{
 			return "register";
 		}
 	}
+
+	@Override
+	public String register(User userDetails) {
+		User user = userRepo.save(userDetails);
+		if(null!=user){
+			return "activate";
+		}else {
+			return "error";
+		}
+	}
 }

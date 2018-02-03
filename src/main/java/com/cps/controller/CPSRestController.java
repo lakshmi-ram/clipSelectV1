@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cps.domain.User;
 import com.cps.service.CPSService;
 import com.cps.vo.LoginCredentials;
 
@@ -34,8 +35,14 @@ public class CPSRestController {
 		return "success";
 	}
 	
+	/*
+	 * activate -click on mail to activate
+	 * error - Please try again
+	 * inactive - click mail link to activate
+	 */
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(HttpServletRequest req, HttpServletResponse res) {
-		return "success";
+	public String register(HttpServletRequest req, HttpServletResponse res, @RequestBody User userDetail) {
+		String result = cpsService.register(userDetail);
+		return result;
 	}
 }

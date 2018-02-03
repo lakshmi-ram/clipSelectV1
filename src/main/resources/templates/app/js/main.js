@@ -57,26 +57,44 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 				'Content-Type' : 'application/json'
 			}
 		}).success(function(response) {
-			console.log(response)
-			//CHange this as per response
+			console.log(response);
+			//Change this as per response
 			$location.url("/"+response);
 		});
 	}
 	
-	$scope.submitStudnetForm = function() {
+	$scope.submitRegistrationForm = function() {
 		console.log("submit data")
 		dataObj = {
-			"name" : $scope.student.firstName
+			"userName" : $scope.student.userName,
+			"password" : $scope.student.password,
+			"active" : $scope.student.active,
+			"activationCode" : $scope.student.activationCode,
+			"title" : $scope.student.title,
+			"surName" : $scope.student.surName,
+			"firstName" : $scope.student.firstName,
+			"occupation" : $scope.student.occupation,
+			"company" : $scope.student.company,
+			"road" : $scope.student.road,
+			"postCode" : $scope.student.postCode,
+			"place" : $scope.student.place,
+			"country" : $scope.student.country,
+			"phone" : $scope.student.phone,
+			"fax" : $scope.student.fax,
+			"language" : $scope.student.language,
+			"email" : $scope.student.email,
+			"emailConf" : $scope.student.emailConf,
+			"passwordConf" : $scope.student.passwordConf
 		}
 		$http({
 			method : 'POST',
-			url : 'http://example.com/clone.php',
+			url : '/register',
 			data : dataObj,
 			headers : {
-				'Content-Type' : 'application/x-www-form-urlencoded'
+				'Content-Type' : 'application/json'
 			}
 		}).success(function(data) {
-			alert("Thanks for Registering.");
+			console.log(response);
 		});
 	}
 	
