@@ -1,9 +1,12 @@
 server.port: 9010
-spring.jpa.hibernate.ddl-auto: create
+spring.jpa.hibernate.ddl-auto: none
 spring.datasource.url: jdbc:mysql://localhost:3306/db_clipSelect
 spring.datasource.username: springuser
 spring.datasource.password: ThePassword
 #https://spring.io/guides/gs/accessing-data-mysql/
+#spring.jpa.hibernate.ddl-auto: create
 #create database db_clipSelect;
 #create user 'springuser'@'localhost' identified by 'ThePassword';
 #grant all on db_clipSelect.* to 'springuser'@'localhost';
+#revoke all on db_example.* from 'springuser'@'localhost';
+#grant select, insert, delete, update on db_example.* to 'springuser'@'localhost';

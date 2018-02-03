@@ -28,7 +28,8 @@ public class CPSServiceImpl implements CPSService{
 	public String register(User userDetails) {
 		User user = userRepo.save(userDetails);
 		if(null!=user){
-			return "activate";
+			
+			return "registerSuccess";
 		}else {
 			return "error";
 		}

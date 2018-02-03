@@ -20,6 +20,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/forgotPassword", {templateUrl: "templates/app/partials/forgotPassword.html", controller: "PageCtrl"})
     .when("/active", {templateUrl: "templates/app/partials/active.html", controller: "PageCtrl"})
     .when("/inactive", {templateUrl: "templates/app/partials/inactive.html", controller: "PageCtrl"})
+    .when("/registerSuccess", {templateUrl: "templates/app/partials/registerSuccess.html", controller: "PageCtrl"})
+    .when("/error", {templateUrl: "templates/app/partials/error.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "templates/app/partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "templates/app/partials/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "templates/app/partials/contact.html", controller: "PageCtrl"})
@@ -93,8 +95,9 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			headers : {
 				'Content-Type' : 'application/json'
 			}
-		}).success(function(data) {
+		}).success(function(response) {
 			console.log(response);
+			$location.url("/"+response);
 		});
 	}
 	
