@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cps.domain.User;
@@ -42,7 +43,13 @@ public class CPSRestController {
 	 */
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String register(HttpServletRequest req, HttpServletResponse res, @RequestBody User userDetail) {
-		String result = cpsService.register(userDetail);
+		String result = cpsService.register(userDetail, req.getRequestURL().toString());
+		return result;
+	}
+		
+	@RequestMapping(value = "/activate", method = RequestMethod.GET)
+	public String activate(HttpServletRequest req, HttpServletResponse res, @RequestParam String userName, @RequestParam String token) {
+		String result = cpsService.activate(userName, token);
 		return result;
 	}
 }
