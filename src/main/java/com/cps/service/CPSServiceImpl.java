@@ -9,6 +9,7 @@ import com.cps.domain.User;
 import com.cps.helper.EmailHelper;
 import com.cps.repository.UserRepo;
 import com.cps.vo.LoginCredentials;
+import com.cps.vo.PasswordReset;
 
 @Component
 public class CPSServiceImpl implements CPSService{
@@ -23,7 +24,11 @@ public class CPSServiceImpl implements CPSService{
 		try {
 			User user = userRepo.findOne(loginCredentials.getUserName());
 			if(null!= user && "Y".equalsIgnoreCase(user.getActive())) {
-				return "active";
+				if(user.getPassword().equalsIgnoreCase(loginCredentials.getPassword())) {
+					return "active";
+				}else {
+					return "error";
+				}				
 			}else if(null!= user && "N".equalsIgnoreCase(user.getActive())){
 				return "inactive";
 			}else{
@@ -67,5 +72,20 @@ public class CPSServiceImpl implements CPSService{
 		}catch(Exception e) {
 			return "error";
 		}
+	}
+
+	@Override
+	public String forgotPassword(PasswordReset passwordReset) {
+		try {
+			User user = userRepo.findOne(passwordReset.getUserName());
+			if(null!= user) {
+				emailHelper.sendMail(user, null);
+				return "pwdresetsuccess";
+			}else {
+				return "error";
+			}
+		}catch(Exception e) {
+			return "error";
+		}			
 	}
 }

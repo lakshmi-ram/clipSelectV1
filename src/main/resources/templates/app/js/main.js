@@ -21,6 +21,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/active", {templateUrl: "templates/app/partials/active.html", controller: "PageCtrl"})
     .when("/inactive", {templateUrl: "templates/app/partials/inactive.html", controller: "PageCtrl"})
     .when("/registerSuccess", {templateUrl: "templates/app/partials/registerSuccess.html", controller: "PageCtrl"})
+    .when("/pwdresetsuccess", {templateUrl: "templates/app/partials/pwdresetsuccess.html", controller: "PageCtrl"})
     .when("/error", {templateUrl: "templates/app/partials/error.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "templates/app/partials/pricing.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "templates/app/partials/services.html", controller: "PageCtrl"})
@@ -104,17 +105,18 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 	$scope.resetPasswordForm = function() {
 		console.log("Reset Password")
 		dataObj = {
-			"email" : $scope.student.emaild			
+			"userName" : $scope.student.userName			
 		}
 		$http({
 			method : 'POST',
-			url : 'http://example.com/clone.php',
+			url : '/forgotPassword',
 			data : dataObj,
 			headers : {
-				'Content-Type' : 'application/x-www-form-urlencoded'
+				'Content-Type' : 'application/json'
 			}
 		}).success(function(data) {
-			alert("Reset pwd");
+			console.log(response);
+			$location.url("/"+response);
 		});
 	}
 	

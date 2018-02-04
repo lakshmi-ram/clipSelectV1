@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cps.domain.User;
 import com.cps.service.CPSService;
 import com.cps.vo.LoginCredentials;
+import com.cps.vo.PasswordReset;
 
 @RestController
 public class CPSRestController {
@@ -32,8 +33,9 @@ public class CPSRestController {
 	}
 
 	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-	public String resetPassword(HttpServletRequest req, HttpServletResponse res) {
-		return "success";
+	public String resetPassword(HttpServletRequest req, HttpServletResponse res, @RequestBody PasswordReset passwordReset) {
+		String result = cpsService.forgotPassword(passwordReset);
+		return result;
 	}
 	
 	/*
