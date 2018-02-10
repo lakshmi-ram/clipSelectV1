@@ -1,0 +1,51 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="buildingDimSubmitForm()" role="form">
+        <div class="form-group">
+           <label for="height" class="col-sm-3 control-label">Building Height h</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="height" class="form-control" ng-required="true" ng-model="student.height" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+           <label for="pitch" class="col-sm-3 control-label">Pitch</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="pitch" class="form-control" ng-required="true" ng-model="student.pitch" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+           <label for="sizeA" class="col-sm-3 control-label">Size a</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="sizeA" class="form-control" ng-required="true" ng-model="student.sizeA" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+           <label for="sizeB" class="col-sm-3 control-label">Size b</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="sizeB" class="form-control" ng-required="true" ng-model="student.sizeB" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+            <label for="substrate" class="col-sm-3 control-label">Roof Substrate</label>
+            <div class="col-sm-2">
+                <select id="substrate" class="form-control" ng-model="student.substrate">
+                    <option value="Closed_roof_substrate">Closed roof substrate</option>
+                    <option value="Roofing_membrane">Roofing membrane</option>                   
+                </select>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+		<input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/country">Back</a>               
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+

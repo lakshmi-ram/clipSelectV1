@@ -1,23 +1,17 @@
 <div class="section">
     <div class="container">
       <form class="form-horizontal" ng-submit="zipOrZoneSubmitForm()" role="form">
-        <div class="form-group">           
-            <div class="col-sm-4  ">
-                Welcome.. You are logged in !!!
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
          <div class="form-group">
            <label for="zipcode" class="col-sm-3 control-label">Please enter your zipcode</label>
             <div class="col-sm-4  ">
-                <input type="text" id="firstName" class="form-control" ng-model="student.zipCode" />
+                <input type="number" id="zipcode" class="form-control" ng-model="student.zipCode" />
             </div>
             <div class="col-sm-3"></div>
         </div>
         <div class="form-group">
             <label for="windZone" class="col-sm-3 control-label">Or Choose your Wind Zone</label>
             <div class="col-sm-2">
-                <select id="language" class="form-control" ng-model="student.windZone">
+                <select id="windZone" class="form-control" ng-model="student.windZone">
                     <option value="one">1</option>
                     <option value="two">2</option>
                     <option value="three">3</option>
@@ -29,7 +23,7 @@
         <input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
         <br/>
         <br/>
-        <a href="#/active">Back</a>               
+        <a href="#/country">Back</a>               
     </form>	
     </div>
     <!-- /.container -->

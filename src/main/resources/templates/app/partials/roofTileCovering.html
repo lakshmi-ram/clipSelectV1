@@ -1,0 +1,34 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="coveringSubmitForm()" role="form">
+        <div class="form-group">
+           <label for="length" class="col-sm-3 control-label">cover length in mm</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="length" class="form-control" ng-required="true" ng-model="student.length" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+           <label for="width" class="col-sm-3 control-label">cover width in mm</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="width" class="form-control" ng-required="true" ng-model="student.width" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group">
+           <label for="noOfTile" class="col-sm-3 control-label">Number of roof tile per meter square</label>
+            <div class="col-sm-4  ">
+                <input type="number" id="noOfTile" class="form-control" ng-required="true" ng-model="student.noOfTile" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+		<input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/country">Back</a>               
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+

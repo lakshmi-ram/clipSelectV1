@@ -1,0 +1,25 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="roofTypeSubmitForm()" role="form">
+        <div class="form-group">
+            <label for="roofType" class="col-sm-3 control-label">Roof Type</label>
+            <div class="col-sm-2">
+                <select id="roofType" class="form-control" ng-model="student.roofType">
+                    <option value="Duopitch">Duopitch Roof</option>
+                    <option value="Monopitch">Monopitch Roof</option>
+                    <option value="Tent">Tent Roof</option>
+                    <option value="Hipped">Hipped Roof</option>
+                </select>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+        <input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/country">Back</a>               
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+

@@ -204,10 +204,27 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 		});
 	}
 
+	$scope.roofTileMfrSubmitForm = function() {
+		console.log("Submit roofMfrTile")
+		dataObj = {
+			"roofTileMfr" : $scope.student.manufacturer			
+		}
+		$http({
+			method : 'POST',
+			url : '/roofTileMfrSubmit',
+			data : dataObj,
+			headers : {
+				'Content-Type' : 'application/json'
+			}
+		}).success(function(response) {
+			console.log(response);
+			$location.url("/"+response);
+		});
+	}
+
 	$scope.roofTileSubmitForm = function() {
 		console.log("Submit roofTile")
 		dataObj = {
-			"manufacturer" : $scope.student.manufacturer,
 			"roofTile" : $scope.student.roofTile
 		}
 		$http({
@@ -222,13 +239,13 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			$location.url("/"+response);
 		});
 	}
-
+	
 	$scope.coveringSubmitForm = function() {
 		console.log("Submit covering")
 		dataObj = {
 			"length" : $scope.student.length,
 			"width" : $scope.student.width,
-			"notile" : $scope.student.notile
+			"noOfTile" : $scope.student.noOfTile
 		}
 		$http({
 			method : 'POST',

@@ -1,0 +1,22 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="landTypeSubmitForm()" role="form">
+        <div class="form-group">
+            <label for="windZone" class="col-sm-3 control-label">Please select Land Type</label>
+            <div class="col-sm-2">
+                <select id="landType" class="form-control" ng-required="true" ng-model="student.landType">
+                    <option value="inland">Inland</option>
+                    <option value="nearCoast">Near the coast</option>
+                </select>
+            </div>
+            <div class="col-sm-7"></div>
+        </div>
+        <input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/country">Back</a>               
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
