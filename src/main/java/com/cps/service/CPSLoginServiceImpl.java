@@ -12,7 +12,7 @@ import com.cps.vo.LoginCredentials;
 import com.cps.vo.PasswordReset;
 
 @Component
-public class CPSServiceImpl implements CPSService{
+public class CPSLoginServiceImpl implements CPSLoginService{
 
 	@Autowired
 	private UserRepo userRepo;
@@ -25,7 +25,7 @@ public class CPSServiceImpl implements CPSService{
 			User user = userRepo.findOne(loginCredentials.getUserName());
 			if(null!= user && "Y".equalsIgnoreCase(user.getActive())) {
 				if(user.getPassword().equalsIgnoreCase(loginCredentials.getPassword())) {
-					return "active";
+					return "country";
 				}else {
 					return "error";
 				}				

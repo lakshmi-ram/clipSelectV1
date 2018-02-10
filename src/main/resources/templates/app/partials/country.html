@@ -1,0 +1,26 @@
+<div class="section">
+    <div class="container">
+      <form class="form-horizontal" ng-submit="countrySubmitForm()" role="form">
+			<div class="form-group">
+				<label for="title" class="col-sm-3 control-label">Country</label>
+				<div class="col-sm-2">
+					<div class="radio">
+						<label><input value="Germany" type="radio" name="training"
+							ng-model="student.country" />Germany</label>
+					</div>
+					<div class="radio">
+						<label><input value="Austria" type="radio" name="training"
+							ng-model="student.country" />Austria</label>
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="Continue" class="btn btn-primary col-sm-offset-3" /> 
+        <br/>
+        <br/>
+        <a href="#/login">Back</a>               
+    </form>	
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+
