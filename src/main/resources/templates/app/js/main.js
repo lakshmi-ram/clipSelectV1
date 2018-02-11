@@ -24,7 +24,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/zipOrZone", {templateUrl: "templates/app/partials/zipOrZone.html", controller: "PageCtrl"})
     .when("/landType", {templateUrl: "templates/app/partials/landType.html", controller: "PageCtrl"})
     .when("/height", {templateUrl: "templates/app/partials/height.html", controller: "PageCtrl"})
-    .when("/roofTileMfrSubmit", {templateUrl: "templates/app/partials/roofTileMfrSubmit.html", controller: "PageCtrl"})
+    .when("/roofTileMfr", {templateUrl: "templates/app/partials/roofTileMfr.html", controller: "PageCtrl"})
     .when("/roofTile", {templateUrl: "templates/app/partials/roofTile.html", controller: "PageCtrl"})
     .when("/roofTileCovering", {templateUrl: "templates/app/partials/roofTileCovering.html", controller: "PageCtrl"})
     .when("/batten", {templateUrl: "templates/app/partials/batten.html", controller: "PageCtrl"})
@@ -291,7 +291,7 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			headers : {
 				'Content-Type' : 'application/json'
 			}
-		}).success(function(data) {
+		}).success(function(response) {
 			console.log(response);
 			$location.url("/"+response);
 		});
@@ -313,7 +313,7 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			headers : {
 				'Content-Type' : 'application/json'
 			}
-		}).success(function(data) {
+		}).success(function(response) {
 			console.log(response);
 			$location.url("/"+response);
 		});
@@ -331,7 +331,7 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			headers : {
 				'Content-Type' : 'application/json'
 			}
-		}).success(function(data) {
+		}).success(function(response) {
 			console.log(response);
 			$location.url("/"+response);
 		});

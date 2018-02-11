@@ -44,7 +44,7 @@ public class CPSDetailServiceImpl implements CPSDetailService{
 		}else {
 			return "height";
 		}
-		return "roofTileMfrSubmit";
+		return "roofTileMfr";
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class CPSDetailServiceImpl implements CPSDetailService{
 		if(null != processVO.getRoofTileMfr()){
 			processVOFromSession.setRoofTileMfr(processVO.getRoofTileMfr());
 		}else {
-			return "roofTileMfrSubmit";
+			return "roofTileMfr";
 		}
 		return "roofTile";
 	}
