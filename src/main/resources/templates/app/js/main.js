@@ -201,14 +201,16 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			}
 		}).success(function(response) {
 			console.log(response);
-			$location.url("/"+response);
+			$scope.manufacturers = response.mfrList;
+			console.log($scope.manufacturers);
+			$location.path("/"+response.result).search({manufacturers: response.mfrList});
 		});
 	}
 
 	$scope.roofTileMfrSubmitForm = function() {
 		console.log("Submit roofMfrTile")
 		dataObj = {
-			"roofTileMfr" : $scope.student.manufacturer			
+			"roofTileMfr" : $scope.manufacturer			
 		}
 		$http({
 			method : 'POST',
@@ -219,7 +221,7 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			}
 		}).success(function(response) {
 			console.log(response);
-			$location.url("/"+response);
+			$location.url("/"+response.result);
 		});
 	}
 
@@ -237,7 +239,7 @@ app.controller('PageCtrl', function($scope, $location, $http, $location) {
 			}
 		}).success(function(response) {
 			console.log(response);
-			$location.url("/"+response);
+			$location.url("/"+response.result);
 		});
 	}
 	

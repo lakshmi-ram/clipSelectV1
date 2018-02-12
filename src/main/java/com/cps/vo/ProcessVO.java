@@ -1,5 +1,9 @@
 package com.cps.vo;
 
+import java.util.List;
+
+import com.cps.domain.ConcreteDetails;
+
 public class ProcessVO {
 
 	String country;
@@ -20,7 +24,28 @@ public class ProcessVO {
 	String sizeB;
 	String substrate;
 	String agree;
+	List<ConcreteDetails> mfrList;
+	List<String> roofTileList;
+	String result;
 	
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public List<ConcreteDetails> getMfrList() {
+		return mfrList;
+	}
+	public void setMfrList(List<ConcreteDetails> mfrList) {
+		this.mfrList = mfrList;
+	}
+	public List<String> getRoofTileList() {
+		return roofTileList;
+	}
+	public void setRoofTileList(List<String> roofTileList) {
+		this.roofTileList = roofTileList;
+	}
 	public String getCountry() {
 		return country;
 	}
@@ -168,6 +193,12 @@ public class ProcessVO {
 		builder.append(substrate);
 		builder.append(", agree=");
 		builder.append(agree);
+		builder.append(", mfrList=");
+		builder.append(mfrList);
+		builder.append(", roofTileList=");
+		builder.append(roofTileList);
+		builder.append(", result=");
+		builder.append(result);
 		builder.append("]");
 		return builder.toString();
 	}

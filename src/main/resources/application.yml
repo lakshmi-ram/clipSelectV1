@@ -18,6 +18,14 @@ spring.mail.properties.mail.smtp.writetimeout: 5000
 #create database db_clipSelect;
 #create user 'springuser'@'localhost' identified by 'ThePassword';
 #grant all on db_clipSelect.* to 'springuser'@'localhost';
-#revoke all on db_example.* from 'springuser'@'localhost';
-#grant select, insert, delete, update on db_example.* to 'springuser'@'localhost';
+#revoke all on db_clipSelect.* from 'springuser'@'localhost';
+#grant select, insert, delete, update on db_clipSelect.* to 'springuser'@'localhost';
 #mysql - root/admin
+#use db_clipSelect;
+#insert into zip_code_wind_zone values ("1234", "1");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("1", "a", "a1", "1", "2", "3");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("2", "a", "a2", "10", "20", "30");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("3", "b", "b1", "4", "5", "6");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("4", "b", "b2", "40", "50", "60");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("5", "c", "c1", "7", "8", "9");
+#insert into concrete_details (sno, mfr, roof_tile, length, width, no_of_tile) values ("6", "c", "c2", "70", "80", "90");

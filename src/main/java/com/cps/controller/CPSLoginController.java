@@ -29,6 +29,9 @@ public class CPSLoginController {
 	@RequestMapping(value = "/loginSubmit", method = RequestMethod.POST)
 	public String loginSubmit(HttpServletRequest req, HttpServletResponse res, @RequestBody LoginCredentials loginCredentials) {
 		String result = cpsService.loginSubmit(loginCredentials);
+		if(result.equalsIgnoreCase("country")) {
+			req.getSession().setAttribute("loggedIn", "Y");
+		}
 		return result;
 	}
 
